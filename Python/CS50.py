@@ -1,1 +1,8 @@
-print("Hello,World!")
+#print("Hello,World!")
+
+#Input Function can prompt the user for an input
+name = input("Name: ")
+
+#Print Function
+#When + is used with strings it is called string concatenation
+print("Hello," + name)
