@@ -54,3 +54,23 @@ s.remove(2)
 print(s)
 #len function will give you the length of a sequence (Tells you the number of thing in list, string, set, & etc)
 print(f"The set has {len(s)} elements.")
+#dict(AKA Dictionary) (Collection of key - value pairs)
+houses = {"Harry": "Gryffindor", "Draco": "Slytherin"}
+#Adding a key - value pair to the dict
+houses["Hermione"] = "Gryffindor"
+#The square bracket helps to loop up values
+print(houses["Harry"])
+
+#Loops (For loops and While loops)
+#For loops (Loops for a set number of times)
+for i in [0, 1, 2, 3, 4, 5]:
+    print(i)
+#Loops 6 times (Loops starts counting from one)
+for i in range(6):
+    print(i)
+#Loops each names in the names array
+for name in names:
+    print(names)
+#Loops each character in fName string variable
+for character in fName:
+    print(character)
