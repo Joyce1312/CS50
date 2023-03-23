@@ -65,7 +65,7 @@ print(houses["Harry"])
 #For loops (Loops for a set number of times)
 for i in [0, 1, 2, 3, 4, 5]:
     print(i)
-#Loops 6 times (Loops starts counting from one)
+#Loops 6 times (Loops starts counting from zero)
 for i in range(6):
     print(i)
 #Loops each names in the names array
@@ -74,3 +74,9 @@ for name in names:
 #Loops each character in fName string variable
 for character in fName:
     print(character)
+
+#Functions
+#Create a function to find the square of any number
+#Functions always starts with def (define the function)
+def square(x):
+    return x * x
