@@ -80,3 +80,43 @@ for character in fName:
 #Functions always starts with def (define the function)
 def square(x):
     return x * x
+
+#Object-Oriented Programming
+#Classes (Template for a type of object)
+#When creating a class always start with class, then name of the class followed by ()
+class Point():
+    def __init__(self,input1,input2):
+        self.x = input1
+        self.y = input2
+#Create a new point
+p = Point(2,8)
+#Prints the x and y value
+print(p.x)
+print(p.y)
+#Creating a class for airline to check if they are at capacity
+class Flight():
+    #Finds the capacity of a flight
+    def __init__(self,capacity):
+        self.capacity = capacity
+        self.passengers = []
+    #Adds new passengers 
+    def add_passenger(self, name):
+        #This means the same as if self.open_seats == 0
+        if not self.open_seats():
+            return False
+        self.passengers.append(name)
+        return True
+    #Checks how many open seats there are 
+    def open_seats(self):
+        return self.capacity - len(self.passengers)
+#Create a new flight
+flight = Flight(3)
+people = ["Harry", "Ron", "Ginny", "Hermione"]
+#Loop through the people list to add them as a passenger
+for person in people:
+    success = flight.add_passenger(person)
+    #if success is true print that the person is added successfully
+    if success:
+        print(f"Added {person} to flight successfully.")
+    else:
+        print(f"No avaiable seats for {person}")
