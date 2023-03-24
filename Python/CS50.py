@@ -157,8 +157,9 @@ def f(people):
     return people["name"]
 #Using a key it tells sort to sort the list of dict by the names
 hogwarts.sort(key = f)
+print(hogwarts)
 #Another way to create a function to tell sort how to sort the list of dict
-hogwarts.sort(key = lambda people: people["names"])
+hogwarts.sort(key = lambda people: people["name"])
 print(hogwarts)
 
 #Exceptions
