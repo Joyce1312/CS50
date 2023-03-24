@@ -1,5 +1,6 @@
 #print("Hello,World!")
-
+#Imports the sys module to this file to use
+import sys
 #Input Function can prompt the user for an input
 name = input("Name: ")
 
@@ -159,3 +160,26 @@ hogwarts.sort(key = f)
 #Another way to create a function to tell sort how to sort the list of dict
 hogwarts.sort(key = lambda people: people["names"])
 print(hogwarts)
+
+#Exceptions
+#Try to get the input for x and y
+try:
+    x = int(input("x: "))
+    y = int(input("y: "))
+#If the exception ValueError occurs print "Error: Invaild input", instead of crashing the program
+except ValueError:
+    print("Error: Invaild input.")
+    sys.exit(1)
+#Try to set the variable of result
+#This is called a try except expression
+try:
+    result = x/y
+#If the exceptions of ZeroDivisionError happens print "Error: Cannot divide by 0.", instead of crashing
+#This is called an exception handler
+except ZeroDivisionError:
+    print("Error: Cannot divide by 0.")
+    #Must import sys module first
+    #Exits the program with the status code of 1
+    #Status code of 1 usually means that something went wrong
+    sys.exit(1)
+print(f"{x}/{y} = {result}")
