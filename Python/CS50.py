@@ -134,7 +134,7 @@ about to run and that the function is completed running
 def announce(f):
     #This function wraps up function f with some additional behavior, so this is often called the wrapper function
     def wrapper():
-        print("Aboout to run the function...")
+        print("About to run the function...")
         f()
         print("Done with the function")
     return wrapper
@@ -144,3 +144,18 @@ def announce(f):
 def hello():
     print("Hello, World!")
 hello()
+
+#lambda (More efficient way to represent functions)
+hogwarts = [
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Cho", "house": "Ravenclaw"},
+    {"name": "Draco", "house": "Slytherin"}
+]
+#Create a function that tells sort how to sort the list of dict
+def f(people):
+    return people["name"]
+#Using a key it tells sort to sort the list of dict by the names
+hogwarts.sort(key = f)
+#Another way to create a function to tell sort how to sort the list of dict
+hogwarts.sort(key = lambda people: people["names"])
+print(hogwarts)
