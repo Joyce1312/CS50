@@ -120,3 +120,27 @@ for person in people:
         print(f"Added {person} to flight successfully.")
     else:
         print(f"No avaiable seats for {person}")
+
+#Decorators (A way to modify functions (Adding additional behavior to the function))
+"""
+The idea is that a decorator is going to be a functioon that takes a 
+function of input and returns a modified version of that function as output
+"""
+"""
+Create a function that moodifies another function by announcing that function is 
+about to run and that the function is completed running
+"""
+#This function will return a new function
+def announce(f):
+    #This function wraps up function f with some additional behavior, so this is often called the wrapper function
+    def wrapper():
+        print("Aboout to run the function...")
+        f()
+        print("Done with the function")
+    return wrapper
+#Add the announce decorator
+#@ symbol means to add a decorator
+@announce
+def hello():
+    print("Hello, World!")
+hello()
