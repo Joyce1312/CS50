@@ -1,0 +1,23 @@
+<!--This means to load static files for this HTML page-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Is It New Year's?</title>
+        <link href="{% static 'newyear/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!--The two percent sign inside the curly braces are part
+            of the django templating langauage that allows me to use 
+            logic (Ex:conditions (if statments))-->
+        {% if newyear %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        <!--When using if statment django requires us to give 
+            an endif tag that tells us this is the end of the 
+            if statement
+        *** Indentation is optional in django *** -->
+        {% endif %}
+    </body>
+</html>

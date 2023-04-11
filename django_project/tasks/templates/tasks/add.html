@@ -1,0 +1,22 @@
+<!--This is how to use template inheirtance. This page is inheirting the layout of layout.html and only changing the body-->
+{% extends "tasks/layout.html" %}
+
+<!--This is the change that you will add to the body of layout.html. 
+    Everything inside the block body and endblock tag is the change.-->
+{% block body %}
+        <h1>Add Task</h1>
+        <!--The action tells it to submit the form back to the add.html-->
+        <!--The request method of post is used when it has the potential to change some state in the application-->
+        <form action ="{% url 'tasks:add' %}" method="post">
+            <!--Adds a csrf (cross-site request forgery) token-->
+            {% csrf_token %}
+            <!--Instead of the regular input tag for text you can just plug in form from the class that you made in views.py-->
+            {{ form }}
+            <input type="submit">
+        </form>
+        <!--Use this hyperlink to go to the other webpage instead of keep chaning it in the url-->
+        <!--The thing in the double braces and percent sign just tells the link to link to the URL with the name add
+            The tasks: tells it to grab the url from the tasks application-->
+        <a href="{% url 'tasks:index' %}">View task</a>
+{% endblock %}
+         

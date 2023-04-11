@@ -1,0 +1,28 @@
+<!--This is how to use template inheirtance. This page is inheirting the layout of layout.html and only changing the body-->
+{% extends "tasks/layout.html" %}
+
+<!--This is the change that you will add to the body of layout.html. 
+    Everything inside the block body and endblock tag is the change.-->
+{% block body %}
+        <h1>Tasks</h1>
+        <ul>
+            <!--The two percent sign inside the curly braces are part
+            of the django templating langauage that allows me to use 
+            loops (Ex:for loops)-->
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            <!--When using for loop django requires us to give 
+            an endfor tag that tells us this is the end of the 
+            for loop
+            *** Indentation is optional in django *** -->
+            <!--If I run the for loop and it doesn't run at all. This is an empty condition-->
+            {% empty %}
+                <li>No tasks.</li>
+            {% endfor %}
+        </ul>
+        <!--Use this hyperlink to go to the other webpage instead of keep chaning it in the url-->
+        <!--The thing in the double braces and percent sign just tells the link to link to the URL with the name add
+            The tasks: tells it to grab the url from the tasks application-->
+        <a href="{% url 'tasks:add' %}">Add a New Task</a>
+{% endblock %}
+ 
